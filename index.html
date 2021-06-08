@@ -1,142 +1,372 @@
-<html>
-    <head>
-        <title>Bank website Using HTML and CSS</title>
-        
-    </head>
-<style>
-    body{
-        background-image: url('https://www.bsebti.com/blog/wp-content/uploads/2018/03/bank_graphics_720-770x433-1.jpg' );
-   background-repeat: no-repeat;
-   background-size: 150px;
-   }
-</style>
-    <body>
-        <div class="bank">
-            <header class="text-gray-600 body-font">
-                <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-                  <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-                    <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24"> -->
-                      <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                    </svg>
-                    <span class="ml-3 text-xl"></span>
-                  </a>
-                  <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-                    <a class="mr-5 hover:text-gray-900">HOME</a>
-                    <a class="mr-5 hover:text-gray-900">ABOUT</a>
-                    <a class="mr-5 hover:text-gray-900">SERVICES</a>
-                    <a class="mr-5 hover:text-gray-900">CONTACT US</a>
-                  </nav>
-                  <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">MORE
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-                      <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
-                  </button>
-                </div>
-              </header>
+<html lang="en">
 
-        </div>
-        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-        <section class="text-gray-600 body-font">
-            <div class="container px-5 py-24 mx-auto">
-              <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
-                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Here are some banks</h1>
-                <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">Please go through it.</p>
-              </div>
-              <div class="flex flex-wrap -m-4">
-                <div class="xl:w-1/3 md:w-1/2 p-4">
-                  <div class="border border-gray-200 p-6 rounded-lg">
-                    
-                    <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-                     <img src="data:image/png;base64,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">
-                        
-                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-                    </svg>
-                    </div>
-                    <h2 class="text-lg text-gray-900 font-medium title-font mb-2"><a href="https://onlinesbi.com/" target="_blank">State Bank of India</a></h2>
-                    <p class="leading-relaxed text-base">Dinesh Kumar Khara ,managing director at SBI,takes over as SBI's chairman effective today.</p>
-                  </div>
-                </div>
-                <div class="xl:w-1/3 md:w-1/2 p-4">
-                  <div class="border border-gray-200 p-6 rounded-lg">
-                    <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-                      <img src="data:image/jpeg;base64,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">
-                        <circle cx="6" cy="6" r="3"></circle>
-                        <circle cx="6" cy="18" r="3"></circle>
-                        <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
-                      </svg>
-                    </div>
-                    <h2 class="text-lg text-gray-900 font-medium title-font mb-2"><a href="https://www.centralbankofindia.co.in/english/home.aspx" target="_blank"> Central Bank of India</a></h2>
-                    <p class="leading-relaxed text-base">Matam VenkatacRao assumed charge of Managing Director and Chief Executive Officer of central bank of India.</p>
-                  </div>
-                </div>
-                <div class="xl:w-1/3 md:w-1/2 p-4">
-                  <div class="border border-gray-200 p-6 rounded-lg">
-                    <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp0GeR7oWpITQj84WEDxUzXf0Hofl8H0bkKUAV1ur02m0wFAq5PMJ1DufepyDroRiZGDI&usqp=CAU">
-                        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
-                        <circle cx="12" cy="7" r="4"></circle>
-                      </svg>
-                    </div>
-                    <h2 class="text-lg text-gray-900 font-medium title-font mb-2"><a href="https://www.pnbindia.in/"target="_blank"> Punjab National Bank</a></h2>
-                    <p class="leading-relaxed text-base">CH.S.S.Mallikarjuna Rao is the chirman of Punjab National Bank of India.</p>
-                  </div>
-                </div>
-                <div class="xl:w-1/3 md:w-1/2 p-4">
-                  <div class="border border-gray-200 p-6 rounded-lg">
-                    <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-                     <img src="data:image/png;base64,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">
-                        <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7"></path>
-                      </svg>
-                    </div>
-                    <h2 class="text-lg text-gray-900 font-medium title-font mb-2"><a href="https://www.bankofbaroda.in/"target="_blank">Bank of Baroda</a></h2>
-                    <p class="leading-relaxed text-base">Sanjiv Chadha is at present Deputy Managing Directing in state Bank of India.</p>
-                  </div>
-                </div>
-                <div class="xl:w-1/3 md:w-1/2 p-4">
-                  <div class="border border-gray-200 p-6 rounded-lg">
-                    <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAMAAACahl6sAAAAxlBMVEX////sCBEANYIAOoXpAADsAQsNP4gNPYcAFG4AKHrvFR/tFBsAEWzw9vruHiXvNjvuJiwTRo36y8z++PgAInauwdkALn5OcqbwPULybXH98fEAG3EkUZMACmj1jpF4kruBm8Gcsc/xSU3n6/MAAF3c4+3/AAAAPpd9G0ZAZp7K1OP71tYwWplkg7L839/L2eb5t7kAAFX3m56NqMgyQ4r0en71horwWV3o///yU1b/HRx8J1INSJt+EDvtyM1vfKhpnMqqrcttSyMGAAAGoklEQVR4nO2ca3+aOhyAEVCTGq22ELpCqlTZmVba9bLtbDvX7/+lTi5cgkzEgz+m7v+8KCSSkAdygxoNAwAAAAAAAAAAAAAAAAB+Be4v6zO+v83SvRvvkfCmBRF7Hzq5yM1eCVsQGXU7tbHHuci9XT9d5wJEQAREQAREQAREQAREQOQ4Rbp2dwv2hT6N33YUT38cInZ362PFRa3nke5RiNijq4errVxn6SoOeviyWe1+isi4eZ6fjkPkeneiHbwDkQaASAUg0gQQqQBEmgAiFYBIE0CkAhBpwq8kMtzByYjM8KQCMyiZHKvIdIErQObJiMyQVQGegAiIgAiInLxIMdPuoAWRTun7Js1FvpTeBrcg8nJX5PNLc5GPnzcyvWtBpAZ7i5T4vYVS1qC5yO4jWqG5yLyFUtYARDJA5LCASMbZiLQxjpT+O/tQOmRvkcfNLP9qQeRi4x//9uggk8YinRZEBqUvBRxCZHMi2oIIPI+ACIiAyPmJELMC53REpgunAnI6L7Gj0K2klOexiuwNiDQBRCoAkSaASAUg0gQQqQBEmgAiFYBIE85YpHmeZyNyFAthuoObrVx+1X684nL7caV1Wz9lsdj2pWK23c1FLisOK63sg3WIIAIiIAIiIAIiIAIiIAIih2TQhkgbX+EYdwa16WgiX/dINxi1IAIAAAAAAAAAAAAAAPD/GV9kdO4N46ozyMLfvv/RPyIm1SLa76val4bx0c7D7z/8VvWN99apFhl0N0S6xyrSqyGS/BN/LO9I+vuv5yFyknfE7lw9SB4N41btPXyyT1KkHP2ii1gYcUzLNH2+dSxLbAQ+lR+nQR4hghQRn0dhrRBZgjRSZYktsWuKXWrlp1FhtRUf1Be5LUXf6SI48DgWL/WSb9eYrj3JMsCEnycNihheLuQsZ6776pnaKp9l8vm6rwpv4okI9oQX7YtdEydxJpbhCcWO2E4DfDgRNhNRgY+pWJnjErRKD1vF/MKjfJ3LnFISJJ/O49SEOtna6GGIZcFYKEIzJu5WIHZDZpJY7PSYDHtMnfWJHlCETKWIQ2kkTkl8bYVOiKgmElGijVsxUdWC4pWeQNwQtVgpwlSswJLxa4KEyLBPpMjyWWqtfH/fqjVfB2vB23SLyMTH+EmWRBcxYqYFIwcJV2OuSt53NJH5SkVOeCTz1PFLlIlEiOkiVrDhsUukk35ZbO4zX7BYKhHbfv9nQcRcMKKJrN7Wsbisc4eooLwORJYwdIjMRVadVGS6YGsRGfAegYTq7LxCpSLG7FkTGU5F3k8Oyjzq3xFLVUbkbbkjbhiGw1wkXJBnVeUWIug+LxhjDgqlG6KLcDgcymqkiYgiznl1ckShVk+iTeFMxHDW2h2R90P32CXyKDBKIrci+m+ki6QkIq5vItUspcjQdd3VFKnKx1s5NXscU69arvgb9XllkZXIE7l6JBd5LYkUuvAdIhlFEck/rFrE10QkLjNFExHLKy3Mq6lTbuxRwK+O7B7MpXKWIkPRr7kbIsYr20vk+kciIjLtP6vvyFIXkf3aq0hH8yIokch1ZUcQ+L4oerTweUUdmliJeMmay4KIEZDabWQ8Gg3G5TbyMhiNvn0vtJHlWxBEuUjIfL2NzHkLCmNfXusVwSabRlEU+oU24svRIyRMpHPfJiI2ZqpqmV5RxJW975NWuWr0WrYUwUj+qKLqtT7/oNdiBGm9lov7qtfCstdyF0TMXtSgFrOFLF1Y6LWeCZNHagMqDyF5f/jliAoi62dxLmPK6na/ea/Vk82z58uibBkQ9XEkqQvJOOKqeZejHn/cf+VmrfdaadWaLQK9AH01hC6T2GxATMI9tPdcq/DDo1Uje2FAdH2MNBFLDSCKdE11YWQ3eouZkVRFcapY3bw1Yq8FEaRmMStG9xUpsGWuJYvOZA2TDEOHt3l5vf3khMxLJ1aztIJTJ189vVozmcvsGSHVbzN1R5CjjuqpYdPjU+skl8OJOOspR0xVY771HOxNFV5PTGZlMM5aJTFjdxWtZgHBaa2gcZIgXmJEJzO+JyYqvszXNMXfCbaQDFpOT2wCbPlLvp1N97kj5fUgxecRh3DE8wjiW58/jxAFknMpGcznRBYm/N45xM/7X5lOpaDieYPvCEmZL28D4gPxPCLyQWaf6mGy16Tx8VrBw8neXbMnRErp7oP2pM4ze/5e66N6rzXqnOIze/byYXTyb1HO4b1W92REdrxpHGnfxrsRbSTn/Yc/ekfEjne/AAAAAAAAAAAAAAAAwHnzH9QyEOSx8740AAAAAElFTkSuQmCC">
-                        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
-                      </svg>
-                    </div>
-                    <h2 class="text-lg text-gray-900 font-medium title-font mb-2"><a href="https://www.hdfcbank.com/" target="_blank">HDFE Bank Ltd.</a></h2>
-                    <p class="leading-relaxed text-base">Sashidhar Jagdishan is at the Managing Directing and Chief Executive Officer.</p>
-                  </div>
-                </div>
-                <div class="xl:w-1/3 md:w-1/2 p-4">
-                  <div class="border border-gray-200 p-6 rounded-lg">
-                    <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-                      <img src="data:image/png;base64,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">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                      </svg>
-                    </div>
-                    <h2 class="text-lg text-gray-900 font-medium title-font mb-2"><a href="https://www.icicibank.com/" target="_blank">ICICI Bank Ltd.</a></h2>
-                    <p class="leading-relaxed text-base">Sandeep Bakhshi is the Managing Directing and CEO of ICICI Bank of India.</p>
-                  </div>
-                </div>
-              </div>
-              <button class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"><a href="https://www.deal4loans.com/loans/banks/list-of-bank-in-india-banks-in-india-major-banks-of-india/" target="_blank">All other banks are:</a></button>
-            </div>
-          </section>
-          <section class="text-gray-600 body-font">
-            <div class="container px-5 py-24 mx-auto">
-              <div class="flex flex-wrap -m-4 text-center">
-                <div class="p-4 sm:w-1/4 w-1/2">
-                  <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">0K</h2>
-                  <p class="leading-relaxed">Users</p>
-                </div>
-               
-                <div class="p-4 sm:w-1/4 w-1/2">
-                  <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">1</h2>
-                  <p class="leading-relaxed">Downloads</p>
-                </div>
-                <div class="p-4 sm:w-1/4 w-1/2">
-                  <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">0</h2>
-                  <p class="leading-relaxed">Products</p>
-                </div>
-              </div>
-            </div>
-          </section>
-    </body>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DocumenBank Website</title>
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<body>
+  <div class="head">
+    <h2>VISIT DIFFERENT BANKS</h2>
+  </div>
+    
+   <div class="nav">
+    <ul>
+      <li><a href="#Home">Home</a> </li>
+      <li><a href="#News">News</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#About">About</a></li>
+    </ul>
+  </div> 
+
+  <div class="container">
+    <div class="item12">
+      <p><a href="https://www.axisbank.com/"><img
+            src="https://pbs.twimg.com/profile_images/1108287793778909184/8lRmu2Np_400x400.png"
+            style="width: 150px; height: 90px;"></a></p>
+      <h2><a href="https://www.axisbank.com/">Axis Bank</a> </h2>
+      <p> Number of Branches-4094</p>
+      <p>Number of ATMs-17315</p>
+      <p>Headquaters-Mumbai</p>
+    </div>
+
+    <div class="item18">
+      <p><a href="https://bandhanbank.com/"><img
+            src="https://pbs.twimg.com/profile_images/999233539945054209/J-FxBM-7_400x400.jpg"
+            style="width: 150px; height: 90px;"></a></p>
+      <h2><a href="https://bandhanbank.com/">Bandhan Bank</a></h2>
+      <p> Number of Branches-1000</p>
+      <p>Number of ATMs-485</p>
+      <p>Headquaters-Kolkata, West Bengal</p>
+    </div>
+
+    <div class="item17">
+      <p><a href="https://www.bankofmaharashtra.in/"><img
+            src="https://tpchennai.com/assets/c-icons/productimage1521727125185_new.png"
+            style="width: 150px; height: 100px;"></a></p>
+      <h2><a href="https://www.bankofmaharashtra.in/">Bank Of Maharastra</a></h2>
+      <p> Number of Branches-1860</p>
+      <p>Number of ATMs-1897</p>
+      <p>Headquaters-Pune</p>
+    </div>
+
+    <div class="item8">
+      <p><a href="https://www.bankofbaroda.in/"><img
+            src="data:image/png;base64,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"
+            style="width: 150px; height: 90px;"></a></p>
+      <h2><a href="https://www.bankofbaroda.in/">Bank Of Baroda</a></h2>
+      <p> Number of Branches-8581</p>
+      <p>Number of ATMs-10318</p>
+      <p>Headquaters-Vadodara</p>
+    </div>
+
+    <div class="item9">
+      <p><a href="https://www.bankofindia.co.in/"><img
+            src="data:image/png;base64,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"
+            style="width: 150px; height: 90px;"></a></p>
+      <h2><a href="https://www.bankofindia.co.in/">Bank Of India</a></h2>
+      <p> Number of Branches-5825</p>
+      <p>Number of ATMs-5000</p>
+      <p>Headquaters-Mumbai</p>
+    </div>
+
+    <div class="item7">
+      <p><a href="https://www.canarabank.com/"><img
+            src="https://www.logotaglines.com/wp-content/uploads/2016/08/wp-1470410546498-1200x942.jpg"
+            style="width: 150px; height: 90px;"></a></p>
+      <h2><a href="https://www.canarabank.com/">Canara Bank</a></h2>
+      <p> Number of Branches-10391</p>
+      <p>Number of ATMs-12829</p>
+      <p>Headquaters-Bengaluru</p>
+    </div>
+
+    <div class="item20">
+      <p><a href="https://www.csb.co.in/"><img
+            src="https://media-exp1.licdn.com/dms/image/C4E0BAQHOMhSJI2SO0w/company-logo_200_200/0/1562244691452?e=2159024400&v=beta&t=maCxbwf-Mc1GslduEvfWhqXbHpKnYPwhZDpfCgIPbUg"
+            style="width: 150px; height: 90px;"></a></p>
+      <h2><a href="https://www.csb.co.in/">Catholic Syrian Bank(CSB)</a></h2>
+      <p> Number of Branches-426</p>
+      <p>Number of ATMs-290</p>
+      <p>Headquaters-Thrissur, Kerala</p>
+    </div>
+
+    <div class="item3">
+      <p><a href="https://www.centralbankofindia.co.in/en"><img
+            src="https://bsmedia.business-standard.com/media-handler.php?mediaPath=http://bsmedia.business-standard.com/_media/bs/img/article/2016-09/23/full/1474621583-5381.jpg&width=1200"
+            style="width: 150px; height: 90px;"></a></p>
+      <h2><a href="https://www.centralbankofindia.co.in/en">Central Bank Of India</a></h2>
+      <p> Number of Branches-2876</p>
+      <p>Number of ATMs-4666</p>
+      <p>Headquaters-Mumbai</p>
+    </div>
+
+    <div class="item21">
+      <p><a href="https://www.cityunionbank.com/"><img
+            src="https://www.unionbankofindia.co.in/UBI_IFRAME/image/new_bot/ubi_icon.png"
+            style="width: 150px; height: 90px;"></a></p>
+      <h2><a href="https://www.cityunionbank.com/">City Union Bank</a></h2>
+      <p> Number of Branches-600</p>
+      <p>Number of ATMs-1724</p>
+      <p>Headquaters-Thanjavur, Tamil Nadu</p>
+    </div>
+
+    <div class="item22">
+      <p><a href="https://www.dcbbank.com/"><img
+            src="https://static.wixstatic.com/media/340afe_29e74dddb5c74fa48a6a17b7d8b181e2~mv2.png/v1/fill/w_150%2Ch_150%2Cal_c%2Cq_90/file.jpg"
+            style="width: 150px; height: 90px;"></a></p>
+      <h2><a href="https://www.dcbbank.com/">DCB Bank</a></h2>
+      <p> Number of Branches-323</p>
+      <p>Number of ATMs-499</p>
+      <p>Headquaters-Mumbai,Maharashtra</p>
+    </div>
+
+    <div class="item23">
+      <p><a href="https://www.dhanbank.com/"><img src="https://banksdirect.in/images/dhanlaxmi-bank-logo.png"
+            style="width: 150px; height: 90px;"></a></p>
+      <h2><a href="https://www.dhanbank.com/">Dhanlaxmi Bank</a></h2>
+      <p> Number of Branches-269</p>
+      <p>Number of ATMs-346</p>
+      <p>Headquaters-Thrissur, Kerala</p>
+    </div>
+
+    <div class="item15">
+      <p><a href="https://www.federalbank.co.in/"><img
+            src="https://aniportalimages.s3.amazonaws.com/media/details/FederalBanklogo.jpg"
+            style="width: 150px; height: 90px;"></a></p>
+      <h2><a href="https://www.federalbank.co.in/">Federal Bank</a></h2>
+      <p> Number of Branches-1252</p>
+      <p>Number of ATMs-1598</p>
+      <p>Headquaters-Aluva, Kerala</p>
+    </div>
+
+    <div class="item11">
+      <p><a href="https://www.hdfcbank.com/"><img
+            src="https://blog.smallcase.com/wp-content/uploads/2019/10/HDFC-securities.png"
+            style="width: 150px; height: 90px;"></a></p>
+      <h2><a href="https://www.hdfcbank.com/">HDFC Bank</a></h2>
+      <p> Number of Branches-4787</p>
+      <p>Number of ATMs-13514</p>
+      <p>Headquaters-Mumbai, Maharashtra</p>
+    </div>
+
+    <div class="item10">
+      <p><a href="https://www.icicibank.com/"><img
+            src="data:image/png;base64,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"
+            style="width: 150px; height: 90px;"></a></p>
+      <h2><a href="https://www.icicibank.com/">ICICI Bank</a></h2>
+      <p> Number of Branches-4882</p>
+      <p>Number of ATMs-15159</p>
+      <p>Headquaters-Mumbai, Maharashtra</p>
+    </div>
+
+    <div class="item24">
+      <p><a href="https://www.idbibank.in/index.asp#"><img
+            src="data:image/png;base64,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"
+            style="width: 150px; height: 90px;"></a></p>
+      <h2><a href="https://www.idbibank.in/index.asp#">IDBI Bank</a></h2>
+      <p> Number of Branches-1892</p>
+      <p>Number of ATMs-3693</p>
+      <p>Headquaters-Mumbai, Maharashtra</p>
+    </div>
+
+    <!-- <div class="item4">
+      <h2>Indian Bank (With Merger of Allahabad Bank)</a></h2>
+      <p> Number of Branches-6000+</p>
+      <p>Number of ATMs-6104</p>
+      <p>Headquaters-Chennai</p>
+    </div> -->
+
+    <div class="item2">
+      <p><a href="https://www.iob.in/"><img
+            src="https://seeklogo.com/images/I/indian_overseas_bank-logo-1D12CB6649-seeklogo.com.png"
+            style="width: 150px; height: 90px;"></a></p>
+      <h2><a href="https://www.iob.in/">Indian Overseas Bank</a></h2>
+      <p> Number of Branches-2995</p>
+      <p>Number of ATMs-3400</p>
+      <p>Headquaters-Chennai</p>
+    </div>
+
+    <div class="item25">
+      <p><a href="https://www.idfcfirstbank.com/"><img
+            src="data:image/png;base64,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"
+            style="width: 150px; height: 90px;"></a></p>
+      <h2><a href="https://www.idfcfirstbank.com/">IDFC First Bank</a></h2>
+      <p> Number of Branches-301</p>
+      <p>Number of ATMs-216</p>
+      <p>Headquaters-Mumbai, Maharashtra</p>
+    </div>
+
+    <div class="item26">
+      <p><a href="https://www.indusind.com/in/en/personal.html"><img
+            src="https://www.goodreturns.in/img/2012/10/10-indusind-bank-logo.jpg"
+            style="width: 150px; height: 90px;"></a></p>
+      <h2><a href="https://www.indusind.com/in/en/personal.html">Induslnd Bank</a></h2>
+      <p> Number of Branches-1004</p>
+      <p>Number of ATMs-2662</p>
+      <p>Headquaters-Mumbai, Maharashtra</p>
+    </div>
+
+    <div class="item27">
+      <p><a href="https://www.jkbank.com/"><img
+            src="data:image/png;base64,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"
+            style="width: 150px; height: 90px;"></a></p>
+      <h2><a href="https://www.jkbank.com/">Jammu & Kashmir Bank</a></h2>
+      <p> Number of Branches-958</p>
+      <p>Number of ATMs-1322</p>
+      <p>Headquaters-Srinagar, Jammu and Kashmir</p>
+    </div>
+
+    <div class="item28">
+      <p><a href="https://karnatakabank.com/"><img
+            src="https://pbs.twimg.com/profile_images/862616785467523072/z_MkrNcf_400x400.jpg"
+            style="width: 150px; height: 90px;"></a></p>
+      <h2><a href="https://karnatakabank.com/">Karnataka Bank</a></h2>
+      <p> Number of Branches-835</p>
+      <p>Number of ATMs-1503</p>
+      <p>Headquaters- Mangaluru, Karnataka</p>
+    </div>
+
+    <div class="item29">
+      <p><a href="https://www.kvb.co.in/"><img
+            src="https://pbs.twimg.com/profile_images/1328299184953278465/jpWKi629.jpg"
+            style="width: 150px; height: 90px;"></a></p>
+      <h2><a href="https://www.kvb.co.in/">Karur Vysya Bank(KVB)</a></h2>
+      <p> Number of Branches-668</p>
+      <p>Number of ATMs-1641</p>
+      <p>Headquaters-Karur, Tamil Nadu</p>
+    </div>
+
+    <div class="item14">
+      <p><a href="https://www.kotak.com/en.html"><img
+            src="https://www.searchpng.com/wp-content/uploads/2019/11/Kotak-Mahindra-Bank-icon.jpg"
+            style="width: 150px; height: 90px;"></a></p>
+      <h2><a href="https://www.kotak.com/en.html">Kotak Mahindra Bank</a></h2>
+      <p> Number of Branches-1369</p>
+      <p>Number of ATMs-2429</p>
+      <p>Headquaters-Mumbai,Maharashtra</p>
+    </div>
+
+    <div class="item19">
+      <p><a href="https://www.lvbank.com/"><img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYwKN09SITcd1ANieY9pskHZ6gADlRy5v8lg&usqp=CAU"
+            style="width: 150px; height: 90px;"></a></p>
+      <h2><a href="https://www.lvbank.com/">Lakshmi Vilas Bank(LVB)</a></h2>
+      <p> Number of Branches-570</p>
+      <p>Number of ATMs-1045</p>
+      <p>Headquaters-Chennai, Tamil Nadu</p>
+    </div>
+
+
+    <div class="item30">
+      <p><a href="https://www.nainitalbank.co.in/english/home.aspx"><img
+            src="https://upload.wikimedia.org/wikipedia/en/thumb/b/bc/Nainitalbank_Logo.svg/1200px-Nainitalbank_Logo.svg.png"
+            style="width: 150px; height: 90px;"></a></p>
+      <h2><a href="https://www.nainitalbank.co.in/english/home.aspx">Nainital Bank</a></h2>
+      <p> Number of Branches-135</p>
+      <p>Number of ATMs-_ _ _</p>
+      <p>Headquaters-Nainital, Uttarakhand</p>
+    </div>
+
+    <div class="item36">
+      <p><a href="https://www.psbindia.com/"><img
+            src="https://dynamic.placementindia.com/recruiter_comp_logo/748053.jpg"
+            style="width: 150px; height: 90px;"></a></p>
+      <h2><a href="https://www.psbindia.com/">Punjab & Sind Bank</a></h2>
+      <p> Number of Branches-1045</p>
+      <p>Number of ATMs-1554</p>
+      <p>Headquaters-New Delhi</p>
+    </div>
+
+
+    <div class="item5">
+      <p><a href="https://www.pnbindia.in/"><img
+            src="https://static.toiimg.com/thumb/msid-74887573,width-1200,height-900,resizemode-4/.jpg"
+            style="width: 150px; height: 90px;"></a></p>
+      <h2><a href="https://www.pnbindia.in/">Punjab National Bank</a></h2>
+      <p> Number of Branches-11437</p>
+      <p>Number of ATMs-8985</p>
+      <p>Headquaters-New Delhi</p>
+    </div>
+
+    <div class="item31">
+      <p><a href="https://www.rblbank.com/"><img
+            src="https://static.wikia.nocookie.net/logopedia/images/7/7d/RBL.png/revision/latest?cb=20200407113301"
+            style="width: 150px; height: 90px;"></a></p>
+      <h2><a href="https://www.rblbank.com/">RBL Bank</a></h2>
+      <p> Number of Branches-342</p>
+      <p>Number of ATMs-_ _ _</p>
+      <p>Headquaters- Mumbai, Maharashtra</p>
+    </div>
+
+    <div class="item32">
+      <p><a href="https://www.southindianbank.com/"><img
+            src="https://www.logotaglines.com/wp-content/uploads/2016/08/South_Indian_Bank_Logo-1200x1200.jpg"
+            style="width: 150px; height: 90px;"></a></p>
+      <h2><a href="https://www.southindianbank.com/">South Indian Bank</a></h2>
+      <p> Number of Branches-852</p>
+      <p>Number of ATMs-1393</p>
+      <p>Headquaters- Thrissur, Kerala</p>
+    </div>
+
+    <div class="item1">
+      <p><a href="https://www.onlinesbi.com/"><img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/SBI-logo.svg/1200px-SBI-logo.svg.png"
+            style="width: 150px; height: 90px;"></a></p>
+      <h2><a href="https://www.onlinesbi.com/">State Bank Of India</a></h2>
+      <p> Number of Branches-24000</p>
+      <p>Number of ATMs-58559</p>
+      <p>Headquaters-Mumbai</p>
+    </div>
+
+    <div class="item33">
+      <p><a href="https://www.tmb.in/"><img
+            src="https://content1.jdmagicbox.com/comp/tirunelveli/k9/0462px462.x462.170529193733.w5k9/catalogue/tamilnad-mercantile-bank-ltd-tirunelveli-tamilnad-mercantile-banks-56x47.jpg?interpolation=lanczos-none&output-format=jpg&resize=1024:*&crop=1024:270px;*,*"
+            style="width: 150px; height: 90px;"></a></p>
+      <h2><a href="https://www.tmb.in/">Tamilnad Mercantle Bank Limited</a></h2>
+      <p> Number of Branches-509</p>
+      <p>Number of ATMs-1156</p>
+      <p>Headquaters- Thoothukudi, Tamil Nadu</p>
+    </div>
+
+    <div class="item16">
+      <p><a href="https://www.ucobank.com/Hindi/homehindi.aspx"><img
+        src="https://www.logotaglines.com/wp-content/uploads/2016/08/UCO-Bank-Logo-1200x1154.jpg"
+        style="width: 150px; height: 90px;"></a></p>
+      <h2><a href="https://www.ucobank.com/Hindi/homehindi.aspx">UCO Bank</a></h2>
+      <p> Number of Branches-2377</a></p>
+      <p>Number of ATMs-4000</p>
+      <p>Headquaters-Kolkata</p>
+    </div>
+
+    <div class="item6">
+      <p><a href="https://www.unionbankofindia.co.in/english/home.aspx"><img
+            src="https://m.economictimes.com/thumb/msid-79085908,width-3001,height-947,resizemode-4,imgsize-314037/union-bank-of-india-logo.jpg"
+            style="width: 150px; height: 90px;"></a></p>
+      <h2><a href="https://www.unionbankofindia.co.in/english/home.aspx">Union Bank Of India</a></h2>
+      <p> Number of Branches-9500</p>
+      <p>Number of ATMs-13300</p>
+      <p>Headquaters-Mumbai</p>
+    </div>
+
+    <div class="item34">
+      <p><a href="https://www.yesbank.in/"><img
+            src="https://upload.wikimedia.org/wikipedia/en/thumb/8/85/Yes_Bank_logo.svg/1200px-Yes_Bank_logo.svg.png"
+            style="width: 150px; height: 90px;"></a></p>
+      <h2><a href="https://www.yesbank.in/">Yes Bank</a></h2>
+      <p> Number of Branches-1050</a></p>
+      <p>Number of ATMs-1305</p>
+      <p>Headquaters-Mumbai, Maharashtra</p>
+    </div>
+
+  </div>
+
+  <footer>
+    <p> © 2021 Thanks for visiting my website. Contact us via komalsah342@gmail.com</p>
+  </footer>
+</body>
 
 </html>
