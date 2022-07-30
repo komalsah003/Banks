@@ -22,7 +22,7 @@
 
 a{
     text-decoration: none;
-    color: red;
+    color: white;
 }
 
 ul{
@@ -93,5 +93,5 @@ p{
 }
 
 .container h2{
-    color: yellowgreen;
+    color: red;
 }
